@@ -29,7 +29,7 @@ fn return_true() -> bool {
 	true
 }
 
-/// An instance of a [`DocumentNodeDefinition`] that has been instantiated in a [`NodeNetwork`].
+/// An instance of a [`DocumentNodeDefinition`](crate::graphite-editor::) that has been instantiated in a [`NodeNetwork`].
 /// Currently, when an instance is made, it lives all on its own without any lasting connection to the definition.
 /// But we will want to change it in the future so it merely references its definition.
 #[derive(Clone, Debug, PartialEq, Hash, DynAny, serde::Serialize, serde::Deserialize)]
@@ -795,7 +795,7 @@ impl NodeNetwork {
 			.collect();
 	}
 
-	/// Populate the [`DocumentNode::path`], which stores the location of the document node to allow for matching the resulting proto nodes to the document node for the purposes of typing and finding monitor nodes.
+	/// Populate the [`DocumentNode::path`](DocumentNode::path), which stores the location of the document node to allow for matching the resulting proto nodes to the document node for the purposes of typing and finding monitor nodes.
 	pub fn generate_node_paths(&mut self, prefix: &[NodeId]) {
 		for (node_id, node) in &mut self.nodes {
 			let mut new_path = prefix.to_vec();
