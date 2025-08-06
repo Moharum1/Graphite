@@ -316,6 +316,7 @@ impl ClosestSegment {
 
 		// If adjacent segments have colinear handles, their direction is changed but their handle lengths is preserved
 		// TODO: Find something which is more appropriate
+		// TODO: Add a new Line
 		let vector_data = document.network_interface.compute_modified_vector(self.layer())?;
 
 		if break_colinear_molding {
